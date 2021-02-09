@@ -1,6 +1,12 @@
+import Search from './components/Search'
+import Promo from './components/Promo'
+
 const Home = () => {
     return ( 
-        <h1>Home 🏠</h1>
+        <div>
+        <Search />
+        <Promo />
+        </div>
     );
 }
 export default Home;
