@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 const StyledButton = styled.button`
 
@@ -26,7 +27,7 @@ const StyledInput = styled.input`
 width: 400px;
 font-family: 'Montserrat', sans-serif;
 font-size: 16px;
-margin-top: 50px;
+margin-top: 80px;
 text-align: center;
 border: none;
 border-bottom: 1px solid #cecece;
@@ -50,12 +51,16 @@ border-left-style: hidden;
 const Search = () => {
     return (
         <div> 
-        <StyledInput type="text" name="Szukaj" placeholder="Wpisz nazwę produktu"></StyledInput>
+        <StyledInput className="input" type="text" name="Szukaj" placeholder="Wpisz nazwę produktu"></StyledInput>
         <div>
         <StyledButton type="submit">Szukaj</StyledButton>
         </div>
         </div>
     );
 }
+
+Search.propTypes = {
+    name: PropTypes.string
+};
 
 export default Search;
