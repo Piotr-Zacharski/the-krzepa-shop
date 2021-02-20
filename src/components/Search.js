@@ -5,7 +5,7 @@ const StyledButton = styled.button`
 
 width: 100px;
 height: 30px;
-border-radius: 8px;
+border-radius: 20px;
 font-family: 'Montserrat', sans-serif;
 font-size: 16px;
 background-color: white;

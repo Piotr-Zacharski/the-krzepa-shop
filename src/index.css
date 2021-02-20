@@ -34,25 +34,45 @@ code {
   align-items: center;
   text-align: center;
   display: inline-block;
-  margin-top: 50px;
-  margin-left: -138px;
+  margin-top: 60px;
+  margin-left: -140px;
   font-size: 24px;
+  border-radius: 20px;
+  padding: 5px;
+  font-family: 'Montserrat', sans-serif;
 }
 .storm {
   position: absolute;
   align-items: center;
   text-align: center;
   display: inline-block;
-  margin-top: 50px;
-  margin-left: -145px;
+  margin-top: 60px;
+  margin-left: -150px;
   font-size: 24px;
+  border-radius: 20px;
+  padding: 5px;
+  font-family: 'Montserrat', sans-serif;
 }
-.frame {
-  max-width: 200px;
-  align-items: center;
-  display: inline-block;
+.bcaa:hover {
+color: #fff;
+background-color: crimson;
+position: absolute;
+width: 69px;
 }
-.material-icons {
-  margin-top: 7px;
+.storm:hover {
+  color: #fff;
+  background-color: crimson;
   position: absolute;
-}
+  width: 85px;
+  }
+  .frame {
+    max-width: 200px;
+    align-items: center;
+    display: inline-block;
+  }
+  .material-icons {
+    margin-top: 7px;
+    position: absolute;
+  }
+  
+  
