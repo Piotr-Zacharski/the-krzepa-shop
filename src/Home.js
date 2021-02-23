@@ -1,11 +1,11 @@
 import Search from './components/Search'
-import Promo from './components/Promo'
+import Promos from './components/Promos'
 
 const Home = () => {
     return ( 
         <div>
         <Search />
-        <Promo />
+        <Promos />
         </div>
     );
 }
