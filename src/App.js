@@ -7,6 +7,7 @@ import Suple from './Suple';
 import Burners from './Burners';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
+
 function App() {
   return (
     <Router>
