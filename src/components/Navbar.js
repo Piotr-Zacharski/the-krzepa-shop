@@ -1,5 +1,12 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
+import Cart from './Cart';
+
+const Icon = styled.i`
+position: absolute;
+margin-top: 15px;
+
+`;
 
 const Nav = styled.nav`
     margin: 0;
@@ -32,7 +39,7 @@ const Navbar = () => {
             <Link to="/suple">ODŻYWKI</Link>
             <Link to="/burners">SPALACZE TŁUSZCZU</Link>
             <Link to="/vitamins">WITAMINY I MINERAŁY</Link>
-            <Link to="/cart"><i className="material-icons">shopping_cart</i></Link>
+            <Link to="/cart"><Icon className="material-icons">shopping_cart</Icon><Cart /></Link>
         </Nav>
     );
 }

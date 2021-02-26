@@ -1,63 +1,23 @@
-import React, { Component } from 'react'
+import styled from 'styled-components';
+import { useState } from 'react';
 
 
-const products = [
-{
-    id: 1,
-    name: 'Kreatyna',
-    sku: 'kskskskks',
-    price: 130.0,
-},
-{
-    id: 2,
-    name: 'BCAA',
-    sku: 'kskskskks',
-    price: 50.0,
-},
-{
-    id: 3,
-    name: 'Karnityna',
-    sku: 'kskskskks',
-    price: 30.0, 
-},
-{
-    id: 4,
-    name: 'Multiwitaminy',
-    sku: 'kskskskks',
-    price: 29.0, 
-},
-];
 
-class Cart extends Component {
-  render () {
-    return (
-        <div>
-      <Cart currency="zł" />
-      <div>
-      {products.map((product, key) => {
-            return (
-                <div className="col" key={key}>
-                  <div className="product-item">
-                    <div className="pi-pic">
-                       <div className="pi-links">
-                          <AddCartButton
-                            product={product}
-                            styles={{ backgroundColor: '#009688', color: 'white', border: '0' }}
-                          />
-                       </div>
-                    </div>
-                    <div className="pi-text">
-                        <p>{product.name}</p>
-                        <h6>{formatter.format(product.price)}</h6>
-                    </div>
-                  </div>
-                </div>
-              );
-      })}
-      </div>
-      </div>
-    )
-  }
+
+const StyledCart = styled.span`
+position: absulute;
+display: flex;
+margin-left: 75px;
+margin-top: 10px;
+`;
+
+const Cart = (addItems) => {
+
+  const [products, setProducts] = useState([]);
+
+  return ( 
+    <StyledCart>{ products }</StyledCart>
+   );
 }
-
+ 
 export default Cart;

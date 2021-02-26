@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -6,10 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
 import logo from '../img/bcaa.jpg';
-import storm from '../img/storm.jpg';
-import burner from '../img/burner.jpg';
+import storms from '../img/storm.jpg';
+import burners from '../img/burner.jpg';
 import styled from 'styled-components';
-import whey from '../img/whey.jpg';
+import wheys from '../img/whey.jpg';
 
 
 
@@ -64,23 +65,41 @@ const useStyles = makeStyles({
 export default function Promos() {
   const classes = useStyles();
 
+  const [burner, setBurner] = useState('Do koszyka');
+  const [bcaa, setBcaa] = useState('Do koszyka');
+  const [whey, setWhey] = useState('Do koszyka');
+  const [storm, setStorm] = useState('Do koszyka');
+
+  const handleClick = () => {
+    setBurner('Dodano');
+  };
+  const handleClicks = () => {
+    setBcaa('Dodano');
+  };
+  const handleClicka = () => {
+    setWhey('Dodano');
+  };
+  const handleClickb = () => {
+    setStorm('Dodano');
+  };
+
   return (
     <div><StyledPromo>Promocja na wybrane produkty!</StyledPromo>
       <StledContainer>
     <Card className={classes.root}>
       <CardContent className={classes.img}>
-      <img src={burner} alt="burner" width="200" />
+      <img src={burners} alt="burner" width="200" />
       </CardContent>
       <CardActions>
-        <Button className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  Do koszyka</Button>
+        <Button onClick={handleClick} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { burner }</Button>
       </CardActions>
     </Card>
     <Card className={classes.root}>
       <CardContent className={classes.img}>
-      <img src={whey} alt="whey" width="200" />
+      <img src={wheys} alt="whey" width="200" />
       </CardContent>
       <CardActions>
-        <Button className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  Do koszyka</Button>
+        <Button onClick={handleClicka} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { whey }</Button>
       </CardActions>
     </Card>
     <Card className={classes.root}>
@@ -88,15 +107,15 @@ export default function Promos() {
       <img src={logo} alt="bcaa" width="200" />
       </CardContent>
       <CardActions>
-        <Button className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  Do koszyka</Button>
+        <Button onClick={handleClicks} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { bcaa }</Button>
       </CardActions>
     </Card>
     <Card className={classes.root}>
     <CardContent className={classes.img}>
-    <img src={storm} alt="bcaa" width="200" />
+    <img src={storms} alt="bcaa" width="200" />
     </CardContent>
     <CardActions>
-      <Button className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  Do koszyka</Button>
+      <Button onClick={handleClickb} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { storm }</Button>
     </CardActions>
   </Card>
   </StledContainer>
