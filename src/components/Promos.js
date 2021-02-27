@@ -6,11 +6,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Button from '@material-ui/core/Button';
-import logo from '../img/bcaa.jpg';
-import storms from '../img/storm.jpg';
-import burners from '../img/burner.jpg';
 import styled from 'styled-components';
-import wheys from '../img/whey.jpg';
+
 
 
 
@@ -42,83 +39,49 @@ color: crimson;
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 200,
+    maxWidth: 250,
     maxHeight: 300,
     margin: 10,
   },
   btn: {
-    alignItems: 'center',
     justifyContent: 'center',
-    alignContent: 'center',
     backgroundColor: 'crimson',
     color: 'white',
     margin: 'auto',
   },
   img: {
     marginLeft: -18,
-    alignItems: 'center',
     justifyContent: 'center',
-    alignContent: 'center',
   },
 });
 
 export default function Promos() {
   const classes = useStyles();
 
-  const [burner, setBurner] = useState('Do koszyka');
-  const [bcaa, setBcaa] = useState('Do koszyka');
-  const [whey, setWhey] = useState('Do koszyka');
-  const [storm, setStorm] = useState('Do koszyka');
-
-  const handleClick = () => {
-    setBurner('Dodano');
-  };
-  const handleClicks = () => {
-    setBcaa('Dodano');
-  };
-  const handleClicka = () => {
-    setWhey('Dodano');
-  };
-  const handleClickb = () => {
-    setStorm('Dodano');
-  };
+  const [promotions, setPromotions] = useState ([
+      
+      { "id": "1", "title": "Thermo Fat burner", "price":"50,00", "image": require ("../img/burner.jpg"), },
+      { "id": "2", "title": "ISO Whey Zero", "price":"100,00", "image": require ("../img/whey.jpg"), },
+      { "id": "3", "title": "BCAA", "price":"55,00", "image": require ("../img/bcaa.jpg"), },
+      { "id": "4", "title": "Universal STORM", "price":"110,00", "image": require ("../img/storm.jpg"), }]);
 
   return (
-    <div><StyledPromo>Promocja na wybrane produkty!</StyledPromo>
+    <div>
+    <StyledPromo>Promocja na wybrane produkty!</StyledPromo>
       <StledContainer>
-    <Card className={classes.root}>
-      <CardContent className={classes.img}>
-      <img src={burners} alt="burner" width="200" />
-      </CardContent>
-      <CardActions>
-        <Button onClick={handleClick} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { burner }</Button>
-      </CardActions>
-    </Card>
-    <Card className={classes.root}>
-      <CardContent className={classes.img}>
-      <img src={wheys} alt="whey" width="200" />
-      </CardContent>
-      <CardActions>
-        <Button onClick={handleClicka} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { whey }</Button>
-      </CardActions>
-    </Card>
-    <Card className={classes.root}>
-      <CardContent className={classes.img}>
-      <img src={logo} alt="bcaa" width="200" />
-      </CardContent>
-      <CardActions>
-        <Button onClick={handleClicks} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { bcaa }</Button>
-      </CardActions>
-    </Card>
-    <Card className={classes.root}>
-    <CardContent className={classes.img}>
-    <img src={storms} alt="bcaa" width="200" />
-    </CardContent>
-    <CardActions>
-      <Button onClick={handleClickb} className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />  { storm }</Button>
-    </CardActions>
-  </Card>
-  </StledContainer>
+        {promotions.map((product) => (
+          <Card className={classes.root} key={product.id}>
+          <CardContent className={classes.img}>
+          <img source={product.image}/>
+          </CardContent>
+          <p>{product.title}</p>
+          <h6>{product.price} zł</h6>
+          <CardActions>
+            <Button className={classes.btn} variant="contained" size="small"><ShoppingCartIcon />Do koszyka</Button>
+          </CardActions>
+        </Card>
+        ))}
+          </StledContainer>
   </div>
   );
 }
