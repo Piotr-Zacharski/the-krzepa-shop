@@ -39,7 +39,7 @@ color: crimson;
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 250,
+    maxWidth: 260,
     maxHeight: 300,
     margin: 10,
   },
@@ -60,10 +60,10 @@ export default function Promos() {
 
   const [promotions, setPromotions] = useState ([
       
-      { "id": "1", "title": "Thermo Fat burner", "price":"50,00", "image": require ("../img/burner.jpg"), },
-      { "id": "2", "title": "ISO Whey Zero", "price":"100,00", "image": require ("../img/whey.jpg"), },
-      { "id": "3", "title": "BCAA", "price":"55,00", "image": require ("../img/bcaa.jpg"), },
-      { "id": "4", "title": "Universal STORM", "price":"110,00", "image": require ("../img/storm.jpg"), }]);
+      { id: 1, title: "Thermo Fat Burner", price:"50,00", image: require ("../img/burner.jpg") },
+      { id: 2, title: "ISO Whey Zero", price:"100,00", image: require ("../img/whey.jpg") },
+      { id: 3, title: "BCAA", price: "55,00", image: require ("../img/bcaa.jpg") },
+      { id: 4, title: "Universal STORM", price: "110,00", image: require ("../img/storm.jpg") }]);
 
   return (
     <div>
@@ -72,7 +72,7 @@ export default function Promos() {
         {promotions.map((product) => (
           <Card className={classes.root} key={product.id}>
           <CardContent className={classes.img}>
-          <img source={product.image}/>
+          <img src={product.image} />
           </CardContent>
           <p>{product.title}</p>
           <h6>{product.price} zł</h6>

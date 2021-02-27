@@ -1,43 +1,31 @@
 [
     {
-    "products": {
+    "product": {
 
         "id": "1",
-        "name": "BCAA",
-        "description": "Growth and recovery formula",
-        "price": "50,00",
-        "availability": "10"
+        "name": "BCAA"
         
     }
 },
 {
-    "products":{
+    "product":{
 
         "id": "2",
-        "name": "STORM",
-        "description": "Creatine volumizer",
-        "price": "130,00",
-        "availability": "5"
+        "name": "STORM"
     }
 },
 {
-    "products":{
+    "product":{
 
         "id": "3",
-        "name": "BURNER",
-        "description": "Thermo fat burner",
-        "price": "70,00",
-        "availability": "7"
+        "name": "BURNER"
     }
 },
 {
-    "products":{
+    "product":{
 
         "id": "4",
-        "name": "WHEY",
-        "description": "Whey Proteine Isolate",
-        "price": "100,00",
-        "availability": "3"
+        "name": "WHEY"
     }
 }
 
